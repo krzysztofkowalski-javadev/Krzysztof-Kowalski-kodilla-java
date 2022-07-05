@@ -9,6 +9,15 @@ public class Circle implements Shape{
         this.getShapeName = getShapeName;
         this.getField = getField;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "getShapeName='" + getShapeName + '\'' +
+                ", getField=" + getField +
+                '}';
+    }
+
     @Override
     public String getShapeName() {
         return getShapeName;

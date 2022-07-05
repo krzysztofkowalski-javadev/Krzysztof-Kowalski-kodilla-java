@@ -5,33 +5,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeCollector {
-
-private String author;
-
-
     private List<Shape> figures = new ArrayList<>();
 
-    public void addFigure(String getShapeName, double getField) {
-    Circle theCircle1 = new Circle("Circle1",2.1);
-    Square theSquare1 = new Square("Square1",3.5);
+    public void addFigure(Shape shape) {
+    figures.add(shape);
+    }
 
-    figures.add(theCircle1);
-    figures.add(theSquare1);
+    public int figuresQuantity() {
+        return figures.size();
     }
 
     public Boolean removeFigure (Shape shape) {
-//
-    return true;
+    boolean result =false;
+    if (figures.contains(shape)){
+        figures.remove(shape);
+        result=true;
+    }
+    return result;
     }
 
     public String getFigure(int n)   {
-//
-    return "";
+
+    return figures.get(n).getShapeName();
     }
 
     public String showFigures()   {
-//
-    return "";
+        String result="";
+    for (int n=0; n<figures.size() ;n++) {
+        result+=figures.get(n).getShapeName();
+    }
+    return result;
     }
 
 }
