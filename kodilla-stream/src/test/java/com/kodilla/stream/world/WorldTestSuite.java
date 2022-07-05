@@ -23,10 +23,11 @@ public class WorldTestSuite {
         Continent europe= new Continent(countriesEurope, "Europe");
         Continent africa= new Continent(Stream.of(cameroon,kenya).collect(Collectors.toSet()),"Africa" );
 
-        Set<Continent> continetsWorld =new HashSet();
-        continetsWorld.add(europe);
-        continetsWorld.add(africa);
-        World theWorld = new World(continetsWorld);
+       // Set<Continent> continetsWorld =new HashSet();
+       // continetsWorld.add(europe);
+       // continetsWorld.add(africa);
+       // World theWorld = new World(continetsWorld);
+        World theWorld = new World(Stream.of(europe,africa).collect(Collectors.toSet()));
         //When
         BigDecimal quantityWorld = theWorld.getPeopleQuantity();
         BigDecimal expectedQuantityWorld=new BigDecimal(40000000);

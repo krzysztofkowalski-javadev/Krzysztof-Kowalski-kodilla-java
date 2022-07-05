@@ -94,8 +94,8 @@ class BookDirectoryTestSuite {
         LibraryUser libraryUser0 = new LibraryUser ("Pawel","Kon","88090200000");
 
         // When
-        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser0))                    // [7]
-                .thenReturn(resultListOf0Books);
+       // when(libraryDatabaseMock.listBooksInHandsOf(libraryUser0))                    // [7]
+        //        .thenReturn(resultListOf0Books);
         // Then
         //assertEquals(0, theListOfBooks10.size());                                     // [5]
     }
