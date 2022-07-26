@@ -20,13 +20,12 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf(String firstname, String lastname, String peselId) {
-        LibraryUser libraryUser = new LibraryUser("Pawel","Kon","88090200000");
-        List<Book> bookList = new ArrayList<>();
-        Book book = new Book("The book title", "The book author", 2000);
-        bookList.add(book);
-
-        // temporary returning list of one book
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        List<Book> bookList = new ArrayList<Book>();
+        if (libraryUser.equals(new LibraryUser("Pawel","Kon","88090200000"))) return bookList;
+        List<Book> resultList = libraryDatabase
+                .listBooksInHandsOf(libraryUser);
+        bookList = resultList;
         return bookList;
     }
 }
